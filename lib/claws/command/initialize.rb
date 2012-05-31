@@ -6,14 +6,14 @@ module Claws
       def self.exec
         h = {
           'capistrano' => {
-            'home' => nil,
+            'home' => ENV['HOME'] || nil,
           },
           'ssh' => {
-            'user' => nil,
+            'user' => ENV['USER'],
           },
           'aws' => {
-            'access_key_id' => nil,
-            'secret_access_key' => nil,
+            'access_key_id' => ENV['AWS_ACCESS_KEY_ID'] || nil,
+            'secret_access_key' => ENV['AWS_SECRET_ACCESS_KEY'] || nil,
           },
           'ec2' => {
             'fields' => {
